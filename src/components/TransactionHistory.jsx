@@ -16,13 +16,13 @@ const statusColors = {
   Declined: '#dc2626',
 }
 
-export default function TransactionHistory({ activePage, setActivePage }) {
+export default function TransactionHistory() {
   const [currentPage, setCurrentPage] = useState(1)
   const totalPages = 10
 
   return (
     <div className="layout">
-      <Sidebar activePage={activePage} setActivePage={setActivePage} />
+      <Sidebar />
       <div className="txhistory">
         <div className="txhistory--top">
           <div>

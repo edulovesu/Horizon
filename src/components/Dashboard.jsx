@@ -14,10 +14,10 @@ const budgets = [
   { name: 'Savings', amount: '$50 left', color: '#22c55e', progress: 60 },
 ]
 
-export default function Dashboard({ activePage, setActivePage }) {
+export default function Dashboard() {
   return (
     <div className="layout">
-      <Sidebar activePage={activePage} setActivePage={setActivePage} />
+      <Sidebar />
       <div className="dashboard">
         <div className="dashboard--main">
           <div className="dashboard--header">

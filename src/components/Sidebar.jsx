@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import {Navlink} from 'react-router-dom'
 import horizon from '../assets/Horizon-logo.png'
 
-export default function Sidebar({ activePage, setActivePage }) {
+export default function Sidebar() {
   const navItems = [
     {
-      id: 'home',
+      path: '/',
       label: 'Home',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -13,7 +13,7 @@ export default function Sidebar({ activePage, setActivePage }) {
       ),
     },
     {
-      id: 'banks',
+      path: '/banks',
       label: 'My Banks',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -22,7 +22,7 @@ export default function Sidebar({ activePage, setActivePage }) {
       ),
     },
     {
-      id: 'transactions',
+      path: '/transactions',
       label: 'Transaction History',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -31,7 +31,7 @@ export default function Sidebar({ activePage, setActivePage }) {
       ),
     },
     {
-      id: 'payment',
+      path: '/payment',
       label: 'Payment Transfer',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -40,7 +40,7 @@ export default function Sidebar({ activePage, setActivePage }) {
       ),
     },
     {
-      id: 'connect',
+      path: '/connect',
       label: 'Connect Bank',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -52,10 +52,10 @@ export default function Sidebar({ activePage, setActivePage }) {
 
   return (
     <div className="sidebar">
-      <div className="sidebar--logo" onClick={() => setActivePage('home')}>
+      <Navlink to='/' className="sidebar--logo">
         <img src={horizon} alt="Horizon logo" className="sidebar--logo-img" />
         <span className="sidebar--logo-text">Horizon</span>
-      </div>
+      </Navlink>
 
       <div className="sidebar--search">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" strokeWidth="2">
@@ -66,14 +66,17 @@ export default function Sidebar({ activePage, setActivePage }) {
 
       <nav className="sidebar--nav">
         {navItems.map((item) => (
-          <div
-            key={item.id}
-            className={`sidebar--nav-item ${activePage === item.id ? 'active' : ''}`}
-            onClick={() => setActivePage(item.id)}
+          <Navlink
+            key={item.path}
+            to={item.path}
+            end={item.path === '/'}
+            className={({ isActive }) => 
+              `sidebar--nav-item ${isActive ? 'active' : ''}`
+           }
           >
             <span className="sidebar--nav-icon">{item.icon}</span>
             <span className="sidebar--nav-label">{item.label}</span>
-          </div>
+          </Navlink>
         ))}
       </nav>
 

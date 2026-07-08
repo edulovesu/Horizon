@@ -9,10 +9,10 @@ const cards = [
   { id: 6, bank: 'Bank of Pakistan', name: 'OLIVIA RHYE', number: '1234 1234 1234 1234', expiry: '06/24', gradient: 'linear-gradient(135deg, #7c3aed, #a78bfa)', spending: '$2,840.40', progress: 40 },
 ]
 
-export default function Bank({ activePage, setActivePage }) {
+export default function Bank() {
   return (
     <div className="layout">
-      <Sidebar activePage={activePage} setActivePage={setActivePage} />
+      <Sidebar  />
       <div className="bank">
         <div className="bank--header">
           <h1 className="bank--title">My Bank Accounts</h1>
