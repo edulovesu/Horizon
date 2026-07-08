@@ -17,8 +17,14 @@ input, select, textarea { font-family: inherit; outline: none; }
 
 /* ========== SHARED ========== */
 .blue { color: #2563eb; }
-.layout { display: flex; min-height: 100vh; }
+.layout { display: flex; min-height: 100vh; overflow: hidden; }
 
+
+.main-content{
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+}
 /* ========== SIDEBAR ========== */
 .sidebar {
   width: 26rem;

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Sidebar from './Sidebar'
+
 
 export default function Payment() {
   const [note, setNote] = useState(`Dear John,\n\nI hope this message finds you well. I am transferring $100 to your account for fun. Please confirm once you receive it.`)
@@ -10,7 +10,6 @@ export default function Payment() {
 
   return (
     <div className="layout">
-      <Sidebar  />
       <div className="payment">
         <div className="payment--header">
           <h1 className="payment--title">Payment Transfer</h1>

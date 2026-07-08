@@ -1,4 +1,5 @@
-import Sidebar from './Sidebar'
+// import Sidebar from './Sidebar'
+// <Sidebar />
 
 const transactions = [
   { id: 1, name: 'Spotify', initials: 'SP', color: '#1DB954', amount: -15.00, status: 'Processing', statusColor: '#888', date: 'Wed 1:00pm', category: 'Subscriptions', categoryColor: '#3b82f6' },
@@ -16,8 +17,7 @@ const budgets = [
 
 export default function Dashboard() {
   return (
-    <div className="layout">
-      <Sidebar />
+    
       <div className="dashboard">
         <div className="dashboard--main">
           <div className="dashboard--header">
@@ -185,6 +185,6 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-    </div>
+    
   )
 }

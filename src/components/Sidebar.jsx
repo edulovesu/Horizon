@@ -1,4 +1,4 @@
-import {Navlink} from 'react-router-dom'
+import { NavLink as Navlink } from 'react-router-dom'
 import horizon from '../assets/Horizon-logo.png'
 
 export default function Sidebar() {
@@ -39,15 +39,15 @@ export default function Sidebar() {
         </svg>
       ),
     },
-    {
-      path: '/connect',
-      label: 'Connect Bank',
-      icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
-        </svg>
-      ),
-    },
+    // {
+    //   path: '/connect',
+    //   label: 'Connect Bank',
+    //   icon: (
+    //     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    //       <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+    //     </svg>
+    //   ),
+    // },
   ]
 
   return (

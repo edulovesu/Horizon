@@ -1,5 +1,6 @@
+
 import { useState } from 'react'
-import Sidebar from './Sidebar'
+
 
 const allTransactions = [
   { id: 1, name: 'Spotify', initials: 'SP', color: '#1DB954', amount: -15.00, status: 'Processing', date: 'Wed 1:00pm', category: 'Subscriptions', categoryColor: '#3b82f6' },
@@ -22,7 +23,6 @@ export default function TransactionHistory() {
 
   return (
     <div className="layout">
-      <Sidebar />
       <div className="txhistory">
         <div className="txhistory--top">
           <div>

@@ -25,7 +25,7 @@ export default function App() {
     />
   }
   return(
-    <div className="app-container">
+    <div className="layout">
       <Sidebar />
       <div className="main-content">
         <Routes>

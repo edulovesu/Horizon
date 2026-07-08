@@ -1,4 +1,4 @@
-import Sidebar from './Sidebar'
+
 
 const cards = [
   { id: 1, bank: 'Horizon Banking', name: 'ADRIAN HAJDIN', number: '1234 1234 1234 1234', expiry: '06/24', gradient: 'linear-gradient(135deg, #2563eb, #3b82f6)', spending: '$2,840.40', progress: 65 },
@@ -12,7 +12,6 @@ const cards = [
 export default function Bank() {
   return (
     <div className="layout">
-      <Sidebar  />
       <div className="bank">
         <div className="bank--header">
           <h1 className="bank--title">My Bank Accounts</h1>
