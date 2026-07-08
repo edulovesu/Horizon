@@ -9,7 +9,7 @@ export default function Payment() {
   const [amount, setAmount] = useState('')
 
   return (
-    <div className="layout">
+    
       <div className="payment">
         <div className="payment--header">
           <h1 className="payment--title">Payment Transfer</h1>
@@ -111,6 +111,6 @@ export default function Payment() {
 
         <button className="payment--btn">Transfer Funds</button>
       </div>
-    </div>
+    
   )
 }

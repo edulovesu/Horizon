@@ -22,7 +22,7 @@ export default function TransactionHistory() {
   const totalPages = 10
 
   return (
-    <div className="layout">
+    
       <div className="txhistory">
         <div className="txhistory--top">
           <div>
@@ -131,6 +131,6 @@ export default function TransactionHistory() {
           </div>
         </div>
       </div>
-    </div>
+    
   )
 }

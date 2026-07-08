@@ -1,14 +1,12 @@
-// import Sidebar from './Sidebar'
-// <Sidebar />
+import {useState, useEffect} from 'react'
 
-const transactions = [
-  { id: 1, name: 'Spotify', initials: 'SP', color: '#1DB954', amount: -15.00, status: 'Processing', statusColor: '#888', date: 'Wed 1:00pm', category: 'Subscriptions', categoryColor: '#3b82f6' },
-  { id: 2, name: 'Alexa Doe', initials: 'AD', color: '#6366f1', amount: +88.00, status: 'Success', statusColor: '#16a34a', date: 'Wed 2:45am', category: 'Deposit', categoryColor: '#16a34a' },
-  { id: 3, name: 'Figma', initials: 'FG', color: '#f24e1e', amount: -18.99, status: 'Processing', statusColor: '#888', date: 'Tue 6:10pm', category: 'Income', categoryColor: '#16a34a' },
-  { id: 4, name: 'Fresh F&V', initials: 'FV', color: '#e5e7eb', textColor: '#111', amount: -88.00, status: 'Success', statusColor: '#16a34a', date: 'Tue 12:15pm', category: 'Groceries', categoryColor: '#8b5cf6' },
-  { id: 5, name: 'Sam Sulek', initials: 'SS', color: '#374151', amount: -40.20, status: 'Declined', statusColor: '#dc2626', date: 'Tue 5:40am', category: 'Food', categoryColor: '#ec4899' },
-]
-
+const getRandomDate = (start, end) => {
+  const startTime = new Date(start).getTime()
+  const endTime = new Date(end).getTime()
+  const randomTimestamp = startTime + Math.random() * (endTime - startTime)
+  const randomDate = new Date(randomTimestamp)
+  return randomDate.toISOString().split('T')[0]
+}
 const budgets = [
   { name: 'Subscriptions', amount: '$25 left', color: '#3b82f6', progress: 70 },
   { name: 'Food and booze', amount: '$120 left', color: '#ef4444', progress: 45 },
@@ -16,6 +14,41 @@ const budgets = [
 ]
 
 export default function Dashboard() {
+
+  const [transactions, setTransactions] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error,setError] = useState(null)
+  
+  useEffect(() => {
+      fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Failed to fetch transactions')
+        }
+        return res.json()
+      })
+      .then(data => {
+          const formatted = data.map(user => ({
+            id: user.id,
+            name: user.name,
+            initials: user.name.split('').map(n => n[0]).join('').slice(0, 2).toUpperCase(),
+            color: '#6366f1',
+            amount: -(Math.random() * 100).toFixed(2),
+            status: ['Success', 'Processing', 'Declined'][Math.floor(Math.random() * 3)],
+            statusColor: '#888',
+            date: getRandomDate('2026-04-02', '2026-09-17'),
+            category: 'Transfer',
+            categoryColor: '#3b82f6',
+          }))
+          setTransactions(formatted)
+          setLoading(false)
+        })
+        .catch(err => {
+          setError(err.message)
+          setLoading(false)
+        })
+  },[])
+  
   return (
     
       <div className="dashboard">
@@ -70,6 +103,16 @@ export default function Dashboard() {
               <span className="dashboard--badge" style={{ color: '#16a34a', background: '#dcfce7' }}>savings</span>
             </div>
 
+            {loading ? (
+              <div style={{ color: '#6b7280', textAlign: 'center', padding: '2rem' }} className="dashboard--loading">
+                Loading transactions...
+              </div>
+            ) : error ? (
+              <div style={{ color: '#ef4444', textAlign: 'center', padding: '2rem' }} className="dashboard--error">
+                {error}
+              </div>
+              
+            ) : (
             <table className="dashboard--table">
               <thead>
                 <tr>
@@ -110,6 +153,8 @@ export default function Dashboard() {
                 ))}
               </tbody>
             </table>
+            )}            
+            
           </div>
         </div>
 

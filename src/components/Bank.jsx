@@ -11,7 +11,7 @@ const cards = [
 
 export default function Bank() {
   return (
-    <div className="layout">
+    
       <div className="bank">
         <div className="bank--header">
           <h1 className="bank--title">My Bank Accounts</h1>
@@ -67,6 +67,6 @@ export default function Bank() {
           </div>
         </div>
       </div>
-    </div>
+    
   )
 }

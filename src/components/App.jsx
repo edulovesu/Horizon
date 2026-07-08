@@ -9,19 +9,33 @@ import Payment from './PaymentTransfer'
 import Sidebar from './Sidebar'
 
 export default function App() {
-  const [authPage, setAuthPage] = useState('login')
+  const [authPage, setAuthPage] = useState(
+    localStorage.getItem('authPage') || 'login'
+  )
 
   if (authPage === 'signup') {
     return <Signup 
-    onLogin={() => setAuthPage('login')} 
-    onSignup={() => setAuthPage('app')} 
+    onLogin={() => {
+      setAuthPage('login')
+      localStorage.setItem('authPage' , 'login')
+    }} 
+    onSignup={() => {
+      setAuthPage('app')
+      localStorage.setItem('authPage' , 'app')
+    }} 
     />
   }
   
   if (authPage === 'login') {
     return <Login 
-    onLogin={() => setAuthPage('app')} 
-    onSignup={() => setAuthPage('signup')} 
+    onLogin={() => {
+      setAuthPage('app')
+      localStorage.setItem('authPage' , 'app')
+    }} 
+    onSignup={() => {
+      setAuthPage('signup')
+      localStorage.setItem('authPage' , 'signup')
+    }} 
     />
   }
   return(
