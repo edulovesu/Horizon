@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useNavigate} from 'react'
 
 const getRandomDate = (start, end) => {
   const startTime = new Date(start).getTime()
@@ -19,7 +19,9 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
-
+  
+  const navigate = useNavigate()
+  
   const filteredTransactions = transactions.filter(tx =>
     tx.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
@@ -91,7 +93,7 @@ export default function Dashboard() {
           <div className="dashboard--transactions-section">
             <div className="dashboard--transactions-header">
               <h2>Recent transactions</h2>
-              <button className="dashboard--view-all" onClick={() => setSearchTerm('')}>View all</button>
+              <button className="dashboard--view-all" onClick={() => navigate('/transactions')}>View all</button>
             </div>
             <input 
               type='text'
