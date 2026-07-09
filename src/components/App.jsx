@@ -40,7 +40,12 @@ export default function App() {
   }
   return(
     <div className="layout">
-      <Sidebar />
+      <Sidebar onLogout = {() => {
+        console.log('onLogout fired')
+        setAuthPage('login')
+        localStorage.setItem('authPage' , 'login')
+      }}
+      />
       <div className="main-content">
         <Routes>
           <Route path='/' element={<Dashboard />} />

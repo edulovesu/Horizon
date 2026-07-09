@@ -649,7 +649,12 @@ input, select, textarea { font-family: inherit; outline: none; }
     font-size: 0.9rem;
     white-space: nowrap;
   }
-  .sidebar--user { display: none; }
+  .sidebar--logout-icon { 
+    display: block;
+    width: 100%; height: 1.4rem;
+  }
+  .sidebar--user-avatar { display: none; }
+
 
   /* Give every page content bottom padding so the nav bar doesn't cover it */
   .dashboard--main,

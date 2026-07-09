@@ -1,4 +1,5 @@
-import {useState, useEffect, useNavigate} from 'react'
+import {useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const getRandomDate = (start, end) => {
   const startTime = new Date(start).getTime()
