@@ -1,4 +1,5 @@
-import {useState, useEffect} from 'react'
+import useFetch from './useFetch'
+import {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const getRandomDate = (start, end) => {
@@ -15,48 +16,28 @@ const budgets = [
 ]
 
 export default function Dashboard() {
-
-  const [transactions, setTransactions] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
-  
   const navigate = useNavigate()
   
-  const filteredTransactions = transactions.filter(tx =>
-    tx.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+    
+  const {data, loading, error} = useFetch('https://jsonplaceholder.typicode.com/users')
   
-  useEffect(() => {
-      fetch('https://jsonplaceholder.typicode.com/users')
-      .then(res => {
-        if (!res.ok){
-          throw new Error('Failed to fetch transactions')
-        }
-        return res.json()
-      })
-      .then(data => {
-          const formatted = data.map(user => ({
-            id: user.id,
-            name: user.name,
-            initials: user.name.split('').map(n => n[0]).join('').slice(0, 2).toUpperCase(),
-            color: '#6366f1',
-            amount: -(Math.random() * 100).toFixed(2),
-            status: ['Success', 'Processing', 'Declined'][Math.floor(Math.random() * 3)],
-            statusColor: '#888',
-            date: getRandomDate('2026-04-02', '2026-09-17'),
-            category: 'Transfer',
-            categoryColor: '#3b82f6',
-          }))
-          setTransactions(formatted)
-          setLoading(false)
-        })
-        .catch(err => {
-          setError(err.message)
-          setLoading(false)
-        })
-  },[])
-  
+  const transactions = data ? data.map(user => ({
+    id: user.id,
+      name: user.name,
+      initials: user.name.split('').map(n => n[0]).join('').slice(0, 2).toUpperCase(),
+      color: '#6366f1',
+      amount: -(Math.random() * 100).toFixed(2),
+      status: ['Success', 'Processing', 'Declined'][Math.floor(Math.random() * 3)],
+      statusColor: '#888',
+      date: getRandomDate('2026-04-02', '2026-09-17'),
+      category: 'Transfer',
+      categoryColor: '#3b82f6',
+    })) : []
+    
+    const filteredTransactions = transactions.filter(tx =>
+      tx.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
   return (
     
       <div className="dashboard">

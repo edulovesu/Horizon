@@ -600,20 +600,18 @@ input, select, textarea { font-family: inherit; outline: none; }
   /* Bank: 2-column card grid */
   .bank--cards-grid { grid-template-columns: repeat(2, 1fr); }
 
-  /* Payment: stack label above field */
+  
   .payment--row { flex-direction: column; gap: 1rem; }
   .payment--row-label { flex: none; width: 100%; }
 }
 
 
-/* ========== MOBILE (≤640px) ========== */
+
 @media (max-width: 640px) {
-  /* Reset the vw-based scaling — fixed 10px so layout controls sizes */
+
   html { font-size: 10px; }
 
-  /* --------------------------------------------------
-     SIDEBAR → fixed bottom navigation bar
-  -------------------------------------------------- */
+
   .sidebar {
     position: fixed;
     bottom: 0; left: 0; right: 0;
@@ -655,23 +653,18 @@ input, select, textarea { font-family: inherit; outline: none; }
   }
   .sidebar--user-avatar { display: none; }
 
-
-  /* Give every page content bottom padding so the nav bar doesn't cover it */
+ 
   .dashboard--main,
   .bank,
   .txhistory,
   .payment { padding-bottom: 8rem; }
 
-  /* --------------------------------------------------
-     LAYOUT
-  -------------------------------------------------- */
+
   .layout { flex-direction: column; }
   .dashboard { flex-direction: column; }
   .dashboard--right { display: none; }
 
-  /* --------------------------------------------------
-     DASHBOARD
-  -------------------------------------------------- */
+
   .dashboard--main { padding: 2rem 1.6rem 8rem; }
   .dashboard--header h1 { font-size: 2.2rem; }
 
@@ -683,7 +676,7 @@ input, select, textarea { font-family: inherit; outline: none; }
   }
   .dashboard--balance-amount { font-size: 2.4rem; }
 
-  /* Scrollable tabs */
+
   .dashboard--tabs { overflow-x: auto; white-space: nowrap; padding: 0 1.6rem; }
   .dashboard--tab { padding: 1rem 1.2rem; font-size: 1.2rem; }
 
@@ -691,22 +684,18 @@ input, select, textarea { font-family: inherit; outline: none; }
   .dashboard--table th,
   .dashboard--table td { padding: 1rem 1.2rem; font-size: 1.2rem; }
 
-  /* Hide Date & Category columns — too cramped */
+  
   .dashboard--table th:nth-child(4),
   .dashboard--table td:nth-child(4),
   .dashboard--table th:nth-child(5),
   .dashboard--table td:nth-child(5) { display: none; }
 
-  /* --------------------------------------------------
-     BANK PAGE
-  -------------------------------------------------- */
+
   .bank { padding: 2rem 1.6rem 8rem; }
   .bank--title { font-size: 2.2rem; }
   .bank--cards-grid { grid-template-columns: 1fr; gap: 1.6rem; }
 
-  /* --------------------------------------------------
-     TRANSACTION HISTORY
-  -------------------------------------------------- */
+ 
   .txhistory { padding: 2rem 1.6rem 8rem; }
   .txhistory--title { font-size: 2.2rem; }
 
@@ -719,7 +708,7 @@ input, select, textarea { font-family: inherit; outline: none; }
 
   .txhistory--table th,
   .txhistory--table td { padding: 1rem 1.2rem; font-size: 1.2rem; }
-  /* Hide Date & Category on mobile */
+  
   .txhistory--table th:nth-child(4),
   .txhistory--table td:nth-child(4),
   .txhistory--table th:nth-child(5),
@@ -727,9 +716,7 @@ input, select, textarea { font-family: inherit; outline: none; }
 
   .txhistory--pagination { flex-wrap: wrap; gap: 1rem; justify-content: center; }
 
-  /* --------------------------------------------------
-     PAYMENT TRANSFER
-  -------------------------------------------------- */
+ 
   .payment { padding: 2rem 1.6rem 8rem; max-width: 100%; }
   .payment--title { font-size: 2.2rem; }
   .payment--section { padding: 1.8rem; }
@@ -738,9 +725,7 @@ input, select, textarea { font-family: inherit; outline: none; }
   .payment--select-wrapper,
   .payment--textarea { width: 100%; }
 
-  /* --------------------------------------------------
-     LOGIN
-  -------------------------------------------------- */
+  
   .login { flex-direction: column; }
   .login--img { display: none; }
   .login--container {
@@ -750,13 +735,11 @@ input, select, textarea { font-family: inherit; outline: none; }
     min-height: 100vh;
   }
 
-  /* --------------------------------------------------
-     SIGNUP
-  -------------------------------------------------- */
+
   .signup { flex-direction: column; }
   .signup--img { display: none; }
   .signup--container { max-width: 100%; padding: 3rem 2.4rem; }
-  /* Stack the two-column fields into one column */
+
   .signup--name,
   .signup--spc,
   .signup--dob { grid-template-columns: 1fr; }
