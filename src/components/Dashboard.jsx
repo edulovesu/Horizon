@@ -17,12 +17,17 @@ export default function Dashboard() {
 
   const [transactions, setTransactions] = useState([])
   const [loading, setLoading] = useState(true)
-  const [error,setError] = useState(null)
+  const [error, setError] = useState(null)
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const filteredTransactions = transactions.filter(tx =>
+    tx.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
   
   useEffect(() => {
       fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => {
-        if (!res.ok) {
+        if (!res.ok){
           throw new Error('Failed to fetch transactions')
         }
         return res.json()
@@ -86,8 +91,22 @@ export default function Dashboard() {
           <div className="dashboard--transactions-section">
             <div className="dashboard--transactions-header">
               <h2>Recent transactions</h2>
-              <button className="dashboard--view-all">View all</button>
+              <button className="dashboard--view-all" onClick={() => setSearchTerm('')}>View all</button>
             </div>
+            <input 
+              type='text'
+              placeholder='Search transactions...'
+              value={searchTerm}
+              onChange={e => setSearchTerm(e.target.value)}
+              style={{
+                margin: '1.2rem 2.4rem',
+                padding: '0.8rem 1.2rem',
+                border: '1px solid #e5e7eb',
+                borderRadius: '0.8rem',
+                fontSize: '1.4rem',
+                width: 'calc(100% - 4.8rem)'
+              }}
+            />
             <div className="dashboard--tabs">
               <span className="dashboard--tab active">Chase Bank</span>
               <span className="dashboard--tab">Bank of America</span>
@@ -123,7 +142,7 @@ export default function Dashboard() {
                 </tr>
               </thead>
               <tbody>
-                {transactions.map(tx => (
+                {filteredTransactions.map(tx => (
                   <tr key={tx.id}>
                     <td>
                       <div className="tx--name">
