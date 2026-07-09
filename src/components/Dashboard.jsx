@@ -111,7 +111,6 @@ export default function Dashboard() {
               <div style={{ color: '#ef4444', textAlign: 'center', padding: '2rem' }} className="dashboard--error">
                 {error}
               </div>
-              
             ) : (
             <table className="dashboard--table">
               <thead>
