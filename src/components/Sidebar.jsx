@@ -92,8 +92,8 @@ export default function Sidebar( {onLogout }) {
       <div className="sidebar--user">
         <div className="sidebar--user-avatar">JS</div>
         <div className="sidebar--user-info">
-          <div className="sidebar--user-name">Adrian Hajdin</div>
-          <div className="sidebar--user-email">adrian@jsmastery.pro</div>
+          <div className="sidebar--user-name">CHIEDU MORDI</div>
+          <div className="sidebar--user-email">chiedu@jsmastery.pro</div>
         </div>
         <svg 
             className="sidebar--logout-icon"

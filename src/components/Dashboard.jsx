@@ -43,7 +43,7 @@ export default function Dashboard() {
       <div className="dashboard">
         <div className="dashboard--main">
           <div className="dashboard--header">
-            <h1>Welcome, <span className="blue">Adrian</span></h1>
+            <h1>Welcome, <span className="blue">Chiedu</span></h1>
             <p>Access &amp; manage your account and transactions efficiently.</p>
           </div>
 
@@ -166,8 +166,8 @@ export default function Dashboard() {
             <div className="dashboard--profile-avatar">
               <div className="dashboard--profile-initials">JS</div>
             </div>
-            <div className="dashboard--profile-name">Adrian Hajdin</div>
-            <div className="dashboard--profile-email">adrian@jsmastery.pro</div>
+            <div className="dashboard--profile-name">CHIEDU MORDI</div>
+            <div className="dashboard--profile-email">chiedu@jsmastery.pro</div>
           </div>
 
           <div className="dashboard--my-banks">
@@ -188,7 +188,7 @@ export default function Dashboard() {
                     <path d="M1 6h22v12H1zM1 10h22"/>
                   </svg>
                 </div>
-                <div className="mini-card--name">ADRIAN HAJDIN</div>
+                <div className="mini-card--name">CHIEDU MORDI</div>
                 <div className="mini-card--bottom">
                   <span className="mini-card--number">1234 1234 1234 1234</span>
                   <span>VISA</span>

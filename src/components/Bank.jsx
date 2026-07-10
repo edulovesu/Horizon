@@ -1,9 +1,9 @@
 
 
 const cards = [
-  { id: 1, bank: 'Horizon Banking', name: 'ADRIAN HAJDIN', number: '1234 1234 1234 1234', expiry: '06/24', gradient: 'linear-gradient(135deg, #2563eb, #3b82f6)', spending: '$2,840.40', progress: 65 },
-  { id: 2, bank: 'Bank of Australia', name: 'ADRIAN HAJDIN', number: '1234 1234 1234 1234', expiry: '06/24', gradient: 'linear-gradient(135deg, #1d4ed8, #60a5fa)', spending: '$2,840.40', progress: 55 },
-  { id: 3, bank: 'Bank of India', name: 'ADRIAN HAJDIN', number: '1234 1234 1234 1234', expiry: '06/24', gradient: 'linear-gradient(135deg, #1e40af, #93c5fd)', spending: '$2,840.40', progress: 45 },
+  { id: 1, bank: 'Horizon Banking', name: 'CHIEDU MORDI', number: '1234 1234 1234 1234', expiry: '06/24', gradient: 'linear-gradient(135deg, #2563eb, #3b82f6)', spending: '$2,840.40', progress: 65 },
+  { id: 2, bank: 'Bank of Australia', name: 'CHIEDU MORDI', number: '1234 1234 1234 1234', expiry: '06/24', gradient: 'linear-gradient(135deg, #1d4ed8, #60a5fa)', spending: '$2,840.40', progress: 55 },
+  { id: 3, bank: 'Bank of India', name: 'CHIEDU MORDI', number: '1234 1234 1234 1234', expiry: '06/24', gradient: 'linear-gradient(135deg, #1e40af, #93c5fd)', spending: '$2,840.40', progress: 45 },
   { id: 4, bank: 'Bank of America', name: 'OLIVIA RHYE', number: '1234 1234 1234 1234', expiry: '06/24', gradient: 'linear-gradient(135deg, #5b21b6, #7c3aed)', spending: '$2,840.40', progress: 70 },
   { id: 5, bank: 'Bank of Canada', name: 'OLIVIA RHYE', number: '1234 1234 1234 1234', expiry: '06/24', gradient: 'linear-gradient(135deg, #6d28d9, #8b5cf6)', spending: '$2,840.40', progress: 60 },
   { id: 6, bank: 'Bank of Pakistan', name: 'OLIVIA RHYE', number: '1234 1234 1234 1234', expiry: '06/24', gradient: 'linear-gradient(135deg, #7c3aed, #a78bfa)', spending: '$2,840.40', progress: 40 },
